@@ -9,12 +9,12 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'MW',
-  tagline: 'Dinosaurs are cool',
+  tagline: ' ',
   favicon: 'img/favicon.ico',
   url: 'https://your-docusaurus-site.example.com',
   baseUrl: '/',
   organizationName: 'aksen123', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'M_W_blog', // Usually your repo name.
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
