@@ -11,7 +11,7 @@ const config = {
   title: 'MW',
   tagline: ' ',
   favicon: 'img/favicon.ico',
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://aksen123.github.io',
   baseUrl: '/',
   organizationName: 'aksen123', // Usually your GitHub org/user name.
   projectName: 'M_W_blog', // Usually your repo name.
