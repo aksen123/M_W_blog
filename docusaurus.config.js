@@ -12,7 +12,7 @@ const config = {
   tagline: ' ',
   favicon: 'img/favicon.ico',
   url: 'https://aksen123.github.io',
-  baseUrl: '/',
+  baseUrl: '/M_W_blog',
   organizationName: 'aksen123', // Usually your GitHub org/user name.
   projectName: 'M_W_blog', // Usually your repo name.
   onBrokenLinks: 'throw',
