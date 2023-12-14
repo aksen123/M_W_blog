@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkm_wblog=self.webpackChunkm_wblog||[]).push([[35],{9005:s=>{s.exports=JSON.parse('{"label":"CSR","permalink":"/M_W_blog/docs/tags/csr","allTagsPath":"/M_W_blog/docs/tags","count":1,"items":[{"id":"1/ssr&csr","title":"CSR & SSR","description":"2023\ub144 12\uc6d4 12\uc77c","permalink":"/M_W_blog/docs/1/ssr&csr"}],"unlisted":false}')}}]);
