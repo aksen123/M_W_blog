@@ -1,6 +1,7 @@
 ---
 description : 2023년 12월 12일
 sidebar_position: 1
+tags: [SSR, CSR]
 ---
 import Test from '@site/src/components/Test'
 
