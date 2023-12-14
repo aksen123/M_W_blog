@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkm_wblog=self.webpackChunkm_wblog||[]).push([[839],{1818:e=>{e.exports=JSON.parse('{"title":"MW","description":" ","slug":"/category/mw","permalink":"/M_W_blog/docs/category/mw","navigation":{"previous":{"title":"\uc2dc~\uc791!","permalink":"/M_W_blog/docs/intro"},"next":{"title":"CSR & SSR","permalink":"/M_W_blog/docs/MW/ssr&csr"}}}')}}]);
