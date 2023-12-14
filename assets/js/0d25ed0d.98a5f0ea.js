@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkm_wblog=self.webpackChunkm_wblog||[]).push([[2278],{4624:l=>{l.exports=JSON.parse('{"label":"facebook","permalink":"/M_W_blog/blog/tags/facebook","allTagsPath":"/M_W_blog/blog/tags","count":1,"unlisted":false}')}}]);
