@@ -8,7 +8,7 @@ import Test from '@site/src/components/Test'
 # CSR & SSR
 
 
-SSR과 CSR은 HTML렌더링 방식으로 렌더링을 어디서 하는지에 따라서 SSR (Server Side Rendering) 또는 CSR (Client Side Rendering)로 구분 된다!
+HTML렌더링 방식으로 렌더링을 어디서 하는지에 따라서 SSR (Server Side Rendering) 또는 CSR (Client Side Rendering)로 구분 된다!
 
 ## 1. SSR (Server Side Rendering)
 ###  작동방식
