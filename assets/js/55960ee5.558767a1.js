@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkm_wblog=self.webpackChunkm_wblog||[]).push([[121],{8070:s=>{s.exports=JSON.parse('[{"label":"SSR","permalink":"/M_W_blog/docs/tags/ssr","count":1},{"label":"CSR","permalink":"/M_W_blog/docs/tags/csr","count":1},{"label":"docusaurus","permalink":"/M_W_blog/docs/tags/docusaurus","count":1}]')}}]);
