@@ -1,6 +1,5 @@
 {
-  "label": "메모",
-  "position" : 2,
+  "label": "Docusaurus",
   "link": {
     "type": "generated-index",
     "description": " "
