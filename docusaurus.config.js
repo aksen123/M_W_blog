@@ -42,6 +42,13 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/ms.jpg',
+      description: 'test',
+      metadata: [
+        {name: 'keywords', content: 'M_W, blog'},
+        {name: 'description', content: '내가만듦'},
+        {name: 'twitter:card', content: 'summary_large_image'},
+        {property: "og:image", content: 'img/ms.jpg'},
+      ],
       navbar: {
         title: '일단 기록하자',
         logo: {
