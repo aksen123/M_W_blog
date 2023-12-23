@@ -41,7 +41,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: '',
+      image: '/img/ms.jpg',
       description: 'test',
       metadata: [
         {name: 'keywords', content: 'M_W, blog'},
