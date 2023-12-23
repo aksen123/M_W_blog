@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout
       title={`M_W Blog`}
-      description="M_W Blog <head />">
+      description="일단 기록하자✌️">
       <main>
         <h1>늦었다고 생각 할때가 너무 늦었다</h1>
         <p>그러니 더 열심히 기록하자✏️</p>
