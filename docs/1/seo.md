@@ -1,6 +1,7 @@
 ---
 description : 2023년 12월 23일
 title : SEO란?!
+image : ./img/SEO.png
 tags: [SEO, 검색엔진 최적화]
 ---
 
