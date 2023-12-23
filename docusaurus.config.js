@@ -41,13 +41,13 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/ms.jpg',
+      image: '',
       description: 'test',
       metadata: [
         {name: 'keywords', content: 'M_W, blog'},
         {name: 'description', content: '내가만듦'},
         {name: 'twitter:card', content: 'summary_large_image'},
-        {property: "og:image", content: 'img/ms.jpg'},
+        {property: "og:image", content: 'https://aksen123.github.io/M_W_blog/img/ms.jpg'},
       ],
       navbar: {
         title: '일단 기록하자',
