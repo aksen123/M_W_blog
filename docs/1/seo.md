@@ -105,7 +105,7 @@ SEO(Search Engine Optimization)는 검색엔진최적화 라고 하는것. 그�
       2. 그 외 모든 사용자 에이전트는 전체 사이트를 크롤링할 수 있음
       3. 사이트의 사이트맵 파일은 `https://www.example.com/sitemap.xml`에 있다
 
-      대략 이런 내용인데 `robots.txt`와 `sitemap`에 관련한 것은 더 찾아본뒤 따로 작성해야겠다..🫠
+      대략 이런 내용인데 `robots.txt`와 `sitemap`에 관련한 것은 더 찾아본뒤 추가로 작성해야겠다..🫠
  <br /><br />
 
 - OG(Open Graph)태그
