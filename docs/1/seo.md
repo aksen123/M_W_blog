@@ -50,6 +50,8 @@ SEO(Search Engine Optimization)는 검색엔진최적화 라고 하는것. 그�
   
   ![](https://i0.wp.com/seo.tbwakorea.com/wp-content/uploads/2023/09/%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8_html.png?resize=1024%2C576&ssl=1)
 
+  이미지 출처 : https://seo.tbwakorea.com/blog/what-is-semantic-tag/
+
 예를 들어 같은 구조의 페이지라고 해도 `<div>`태그 사이트 구조를 설계한 왼쪽의 같은 경우 크롤러가 제대로 이해 하지못해 상위 검색 결과에 포함되지 않는다는 것!<br/>
 **검색결과에 안나온다 >> 소비자에게 노출 안됨 >> 비지니스 기회⬇️**
 

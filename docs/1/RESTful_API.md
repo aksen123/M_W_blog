@@ -1,0 +1,48 @@
+---
+description : 2023년 12월 29일
+tags: [RESTful API,REST, RESTful, API]
+---
+
+
+## RESTful API란?????
+
+> 간략하게 설명 하자면 REST한 방식으로 프로그램간 정보 교환 등의 상호작용을 가능하게 하는 것!!!
+> 그렇다면 여기서 먼저 알아야 할건 REST란 무엇이고 REST API가 뭔지를 먼저 알아야 할듯! 
+
+<br /><br />
+
+## REST란?
+
+REST(Representational State Transfer)란 네트워크 상에서 Client와 Server사이의 통신 방식 중 하나로 웹의 장점을 최대한 활용할 수 있는 아키텍쳐 스타일이다.<br />
+자원을 이름으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것을 의미한다. 즉,
+Client는 `URI`를 이용해 자원의 지정하고 해당 자원의 상태(정보)에 대한 조작을 `HTTP 메소드`를 사용해 Server에 요청 한다. <br/> 
+__여기서 REST의 원칙을 지키면서 API의 의미를 표현하고. 쉽고,파악하기 쉽게 하는것을 RESTful하다고 한다.__
+
+ ![REST](https://gmlwjd9405.github.io/images/network/rest.png)
+
+### URI 
+
+  -  URI : Uniform Resource Identifier의 약자로 우리말로 '통합 자원 식별자'(즉 인터넷상의 리소스 자원 자체를 식별하는 고유한 문자열 시퀀스)
+      - Uniform : 리소스를 식별하는 통일된 방식
+      - Resource : URI로 식별 가능한 모든 종류의 자원을 지칭(웹 브라우저 파일 및 그 이외 리소스 포함)
+      - Identifier : 다른 항목과 구분하기 위해 필요한 정보 
+
+<br />
+
+### HTTP 메소드
+
+  - HTTP 메소드 : 클라이언트와 서버 사이에 이루어지는 `요청(Request)`과 `응답(Response)`데이터를 전송하는 방식이다. 쉽게 말해 서버에 주어진 리소스에 수행하길 원하는 행동, 서버가 수행해야 할 동작을 지정하는 요청을 보내는 방법이다! 
+  - 주요 메서드로는 아래 다섯가지가 있는데 이것을 통해 `CRUD (Create, Read, Update, Delete) Operation`을 적용하는 것
+      - GET (Read 조회): 리소스 조회
+      - POST (Create 생성): 요청데이터 처리 (주로 새로운 데이터 생성에 사용)
+      - PUT (Update 수정): 리소스 전체 변경(덮어쓰기),해당 리소스가 없으면 생성
+      - PATCH (Update 수정): 리소스 부분 변경
+      - DELETE (Delete 삭제): 리소스 삭제 
+
+
+## REST API ??
+
+HTTP를 잘 사용하기 위해 `URI`와 `HTTP 메소드`를 사용해, URL로 어떤 자원에 접근할 것인지, 메소드로 어떤 행위를 할것인지 표현해 설계된 API
+
+
+
