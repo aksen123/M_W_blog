@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.0.1">
 <title data-rh="true">RESTful_API | MW</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:image" content="https://aksen123.github.io/M_W_blog/img/ms.jpg"><meta data-rh="true" property="og:url" content="https://aksen123.github.io/M_W_blog/docs/1/RESTful_API"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="M_W, blog"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://aksen123.github.io/M_W_blog/img/ms.jpg"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="RESTful_API | MW"><meta data-rh="true" name="description" content="2023년 12월 29일"><meta data-rh="true" property="og:description" content="2023년 12월 29일"><link data-rh="true" rel="icon" href="/M_W_blog/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://aksen123.github.io/M_W_blog/docs/1/RESTful_API"><link data-rh="true" rel="alternate" href="https://aksen123.github.io/M_W_blog/docs/1/RESTful_API" hreflang="en"><link data-rh="true" rel="alternate" href="https://aksen123.github.io/M_W_blog/docs/1/RESTful_API" hreflang="x-default"><link rel="stylesheet" href="/M_W_blog/assets/css/styles.844efd90.css">
-<script src="/M_W_blog/assets/js/runtime~main.56330324.js" defer="defer"></script>
+<script src="/M_W_blog/assets/js/runtime~main.09fa20e2.js" defer="defer"></script>
 <script src="/M_W_blog/assets/js/main.bc7e3298.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -59,6 +59,56 @@ Client는 <code>URI</code>를 이용해 자원의 지정하고 해당 자원의 
 <br>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="rest-api">REST API<a href="#rest-api" class="hash-link" aria-label="Direct link to REST API" title="Direct link to REST API">​</a></h2>
 <p>REST API는 REST아키텍처 스타일의 디자인 원칙을 준수해서 만든 API라고 하는데.. 음 그러니까 REST방식으로 만든 API라는거잖아?.. <br></p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="rest-api-설계-규칙">REST API 설계 규칙<a href="#rest-api-설계-규칙" class="hash-link" aria-label="Direct link to REST API 설계 규칙" title="Direct link to REST API 설계 규칙">​</a></h3></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-tags-row row margin-bottom--sm"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/M_W_blog/docs/tags/res-tful-api">RESTful API</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/M_W_blog/docs/tags/rest">REST</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/M_W_blog/docs/tags/res-tful">RESTful</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/M_W_blog/docs/tags/api">API</a></li></ul></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/M_W_blog/docs/1/ssr&amp;csr"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">CSR &amp; SSR</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/M_W_blog/docs/1/seo"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SEO란</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#restful-api란" class="table-of-contents__link toc-highlight">RESTful API란?????</a></li><li><a href="#rest란" class="table-of-contents__link toc-highlight">REST란?</a></li><li><a href="#rest의-구성" class="table-of-contents__link toc-highlight">REST의 구성</a><ul><li><a href="#자원resource--uri" class="table-of-contents__link toc-highlight">자원(Resource) : URI</a></li><li><a href="#행위verb--http-메소드" class="table-of-contents__link toc-highlight">행위(Verb) : HTTP 메소드</a></li><li><a href="#표현representations" class="table-of-contents__link toc-highlight">표현(Representations)</a></li></ul></li><li><a href="#api" class="table-of-contents__link toc-highlight">API</a></li><li><a href="#rest-api" class="table-of-contents__link toc-highlight">REST API</a><ul><li><a href="#rest-api-설계-규칙" class="table-of-contents__link toc-highlight">REST API 설계 규칙</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="rest-api-설계-기본-규칙">REST API 설계 기본 규칙<a href="#rest-api-설계-기본-규칙" class="hash-link" aria-label="Direct link to REST API 설계 기본 규칙" title="Direct link to REST API 설계 기본 규칙">​</a></h3>
+<br>
+<blockquote>
+<p>도큐먼트 : 객체 인스턴스나 데이터베이스 레코드와 유사한 개념 <br>
+컬렉션 : 서버에서 관리하는 디렉터리라는 리소스 <br>
+스토어 : 클라이언트에서 관리하는 리소스 저장소 <br></p>
+</blockquote>
+<ul>
+<li>
+<p><strong>URI는 정보의 자원을 표현 해야함</strong></p>
+<ul>
+<li>
+<p>동사보다 명사, 대문자보단 소문자를 사용</p>
+</li>
+<li>
+<p>도큐먼트 이름은 단수 명사를 사용</p>
+</li>
+<li>
+<p>컬렉션 이름은 복수 명사를 사용</p>
+</li>
+<li>
+<p>스토어 이름은 복수 명사를 사용</p>
+</li>
+</ul>
+<blockquote>
+<p><code>/User/1</code> &gt;&gt; <code>/user/1</code></p>
+</blockquote>
+</li>
+<li>
+<p>자원에 대한 행위는 HTTP 메소드(GET, PUT, POST, DELETE 등)로 표현</p>
+<ul>
+<li>URI에 HTTP 메소드가 들어가면 안된다<!-- -->
+<blockquote>
+<p><code>GET) /user/delete/1</code> &gt;&gt; <code>DELETE)  /user/1</code></p>
+</blockquote>
+</li>
+<li>URI에 행위에 대한 동사 표현이 들어가면 안됨<!-- -->
+<blockquote>
+<p><code>GET)  /user/show/1</code> &gt;&gt; <code>GET)  /user/1</code> <br>
+<code>POST)  /user/insert/1</code> &gt;&gt; <code>POST)  /user/1</code></p>
+</blockquote>
+</li>
+<li>경로 부분 중 변하는 부분은 유일한 값으로 대체한다.(즉, <!-- -->:id<!-- -->는 하나의 특정 resource를 나타내는 고유값이다.)<!-- -->
+<blockquote>
+<p>user를 생성 &gt;&gt;&gt;  <code>POST) /users</code> <br>
+id가 1인 user를 삭제 &gt;&gt;  <code>DELETE) /users/1</code></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-tags-row row margin-bottom--sm"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/M_W_blog/docs/tags/res-tful-api">RESTful API</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/M_W_blog/docs/tags/rest">REST</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/M_W_blog/docs/tags/res-tful">RESTful</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/M_W_blog/docs/tags/api">API</a></li></ul></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/M_W_blog/docs/1/ssr&amp;csr"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">CSR &amp; SSR</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/M_W_blog/docs/1/seo"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SEO란</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#restful-api란" class="table-of-contents__link toc-highlight">RESTful API란?????</a></li><li><a href="#rest란" class="table-of-contents__link toc-highlight">REST란?</a></li><li><a href="#rest의-구성" class="table-of-contents__link toc-highlight">REST의 구성</a><ul><li><a href="#자원resource--uri" class="table-of-contents__link toc-highlight">  자원(Resource) : URI</a></li><li><a href="#행위verb--http-메소드" class="table-of-contents__link toc-highlight">행위(Verb) : HTTP 메소드</a></li><li><a href="#표현representations" class="table-of-contents__link toc-highlight">표현(Representations)</a></li></ul></li><li><a href="#api" class="table-of-contents__link toc-highlight">API</a></li><li><a href="#rest-api" class="table-of-contents__link toc-highlight">REST API</a><ul><li><a href="#rest-api-설계-기본-규칙" class="table-of-contents__link toc-highlight">REST API 설계 기본 규칙</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>
