@@ -8,7 +8,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'MW',
+  title: 'M_W',
   tagline: ' ',
   favicon: 'img/favicon.ico',
   url: 'https://aksen123.github.io',
@@ -45,7 +45,7 @@ const config = {
       description: 'test',
       metadata: [
         {name: 'keywords', content: 'M_W, blog'},
-        {name: 'description', content: '내가만듦'},
+        {name: 'og:title', content: '내가만듦'},
         {name: 'twitter:card', content: 'summary_large_image'},
         {property: "og:image", content: 'https://aksen123.github.io/M_W_blog/img/ms.jpg'},
       ],
