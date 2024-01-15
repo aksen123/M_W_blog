@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'M_W',
   tagline: ' ',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   url: 'https://aksen123.github.io',
   baseUrl: '/M_W_blog',
   organizationName: 'aksen123', // Usually your GitHub org/user name.
@@ -46,14 +46,15 @@ const config = {
       metadata: [
         {name: 'keywords', content: 'M_W, blog'},
         {name: 'og:title', content: '내가만듦'},
-        {name: 'twitter:card', content: 'summary_large_image'},
         {property: "og:image", content: 'https://aksen123.github.io/M_W_blog/img/ms.jpg'},
+        {property:'og:image:width', content: '800'},
+        {property:'og:image:height', content: '400'}
       ],
       navbar: {
         title: '일단 기록하자',
         logo: {
           alt: 'M_W Blog',
-          src: 'img/logo.svg',
+          src: 'img/favicon2.png',
         },
         items: [
           {
