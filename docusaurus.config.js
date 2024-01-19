@@ -48,7 +48,7 @@ const config = {
         { name: "og:title", content: "내가만듦" },
         {
           property: "og:image",
-          content: "/img/ms2.jpg",
+          content: "/img/docusaurus.png",
         },
       ],
       navbar: {
