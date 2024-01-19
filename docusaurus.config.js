@@ -41,15 +41,15 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "/img/ms.jpg",
+      image: "/img/docusaurus.png",
       description: "test",
       metadata: [
         { name: "keywords", content: "M_W, blog" },
         { name: "og:title", content: "내가만듦" },
-        {
-          property: "og:image",
-          content: "/img/docusaurus.png",
-        },
+        // {
+        //   property: "og:image",
+        //   content: "/img/ms2.jpg",
+        // },
       ],
       navbar: {
         title: "일단 기록하자",
