@@ -48,7 +48,7 @@ const config = {
         { name: "og:title", content: "내가만듦" },
         {
           property: "og:image",
-          content: "https://aksen123.github.io/M_W_blog/img/ms.jpg",
+          content: "/img/ms2.jpg",
         },
       ],
       navbar: {
