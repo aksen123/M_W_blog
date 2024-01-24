@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkm_wblog=self.webpackChunkm_wblog||[]).push([[4941],{7872:l=>{l.exports=JSON.parse('{"label":"REST","permalink":"/M_W_blog/docs/tags/rest","allTagsPath":"/M_W_blog/docs/tags","count":1,"items":[{"id":"1/RESTful_API","title":"RESTful_API","description":"2023\ub144 12\uc6d4 29\uc77c","permalink":"/M_W_blog/docs/1/RESTful_API"}],"unlisted":false}')}}]);
