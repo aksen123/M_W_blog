@@ -1,6 +1,5 @@
 ---
 description: 2024년 1월 24일
-sidebar_position: 1
 tags: [lottie, 로티, 애니메이션]
 ---
 
