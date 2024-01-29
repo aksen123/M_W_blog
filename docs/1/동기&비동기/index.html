@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.0.1">
 <title data-rh="true">동기,비동기 개념과 차이 | M_W</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://aksen123.github.io/M_W_blog/img/ms2.jpg"><meta data-rh="true" name="twitter:image" content="https://aksen123.github.io/M_W_blog/img/ms2.jpg"><meta data-rh="true" property="og:url" content="https://aksen123.github.io/M_W_blog/docs/1/동기&amp;비동기"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="M_W, blog"><meta data-rh="true" name="og:title" content="내가만듦"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="동기,비동기 개념과 차이 | M_W"><meta data-rh="true" name="description" content="2024년 1월 9일"><meta data-rh="true" property="og:description" content="2024년 1월 9일"><link data-rh="true" rel="icon" href="/M_W_blog/img/favicon.png"><link data-rh="true" rel="canonical" href="https://aksen123.github.io/M_W_blog/docs/1/동기&amp;비동기"><link data-rh="true" rel="alternate" href="https://aksen123.github.io/M_W_blog/docs/1/동기&amp;비동기" hreflang="en"><link data-rh="true" rel="alternate" href="https://aksen123.github.io/M_W_blog/docs/1/동기&amp;비동기" hreflang="x-default"><link rel="stylesheet" href="/M_W_blog/assets/css/styles.6ec1915e.css">
-<script src="/M_W_blog/assets/js/runtime~main.1513b3eb.js" defer="defer"></script>
+<script src="/M_W_blog/assets/js/runtime~main.f525f5a6.js" defer="defer"></script>
 <script src="/M_W_blog/assets/js/main.c854c2e8.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,9 +22,9 @@
 <p><img loading="lazy" src="https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F18cbcc9a-5d5c-4fdd-ab65-8471f38f13de%2FUntitled.png&amp;blockId=5bee3723-7dd3-4be3-8cc6-20fa085e308a" alt="동기방식 처리" class="img_ev3q"></p>
 <blockquote>
 <p>요청과 결과가 동시에 일어나는 방식으로 요청을 보낸 후 응답을 받아야 다음 동작이 진행된다 (작성된 순서대로 처리하는 방식)</p>
-<ul>
-<li>직렬적 방식 &gt;&gt; 서버로 요청을 보내면 요청에 대한 응답을 받기 전까지 다음 동작들은 진행 불가 ( 커피머신 이라고 생각하면 됨 A작업이 끝날때 까지 다른 B작업 시작 X )</li>
-</ul>
+<blockquote>
+<p>직렬적 방식 &gt;&gt; 서버로 요청을 보내면 요청에 대한 응답을 받기 전까지 다음 동작들은 진행 불가 ( 커피머신 이라고 생각하면 됨 A작업이 끝날때 까지 다른 B작업 시작 X )</p>
+</blockquote>
 </blockquote>
 <ul>
 <li>장점 : 설계가 간단하며 직관적</li>
@@ -41,9 +41,9 @@
 <p><img loading="lazy" src="https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F21e7833e-b272-44f9-9511-7470e0ed0b54%2FUntitled.png&amp;blockId=874bb738-0b47-43b1-9401-fa7e31596f0d" alt="비동기방식 처리" class="img_ev3q"></p>
 <blockquote>
 <p>요청과 결과가 동시에 일어나지 않는 방식 (작성된 순서와 상관없이 처리)</p>
-<ul>
-<li>병렬적 방식 &gt;&gt; 서버에 보낸 요청에 대한 응답을 기다리지 않고 다른 요청을 서버에 보낼수 있다 ( A작업을 기다리면서 B작업 시작 O)</li>
-</ul>
+<blockquote>
+<p>병렬적 방식 &gt;&gt; 서버에 보낸 요청에 대한 응답을 기다리지 않고 다른 요청을 서버에 보낼수 있다 ( A작업을 기다리면서 B작업 시작 O)</p>
+</blockquote>
 </blockquote>
 <ul>
 <li>장점 : 요청에 대한 결과가 반환되기 전에 다른 작업을 수행 할 수 있어 자원을 효율적으로 사용할 수 있다.</li>
@@ -79,15 +79,15 @@
 </li>
 <li>
 <p><code>setTimeout</code>함수에 전달했던 1000ms 시간이 지난뒤 <code>setTimeout</code>안에 콜백함수가 <code>Callback Queue</code>라는곳에 추가 된다.</p>
+<ul>
+<li><strong><em>여기서 <code>setTimeout</code>을 0초로 실행해도 같은 결과가 나옴</em></strong></li>
+</ul>
 </li>
 <li>
 <p><code>Event Loop</code>가 <code>Call Stack</code>이 빈것을 확인 후 <code>Callback Queue</code>를 확인해 안에 있는 콜백함수를 <code>Call Stack</code>에 추가 한다</p>
 </li>
 <li>
 <p>콜백함수가 실행 되고 <code>console.log(&#x27;함수2 입니다&#x27;)</code>가 <code>Call Stack</code>에 추가된 후 화면에 출력 된 뒤 <code>Call Stack</code>에서 제거 된다.</p>
-<ul>
-<li><strong><em>여기서 <code>setTimeout</code>을 0초로 실행해도 같은 결과가 나옴</em></strong></li>
-</ul>
 <p><a href="https://medium.com/sjk5766/javascript-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%95%B5%EC%8B%AC-event-loop-%EC%A0%95%EB%A6%AC-422eb29231a8" target="_blank" rel="noopener noreferrer">참고 블로그</a> ⬅️이글을 보고 정리해 봤다?(라고 쓰고 거의.. 받아 적어 왔다고 읽는다) 진짜 이해하기 쉽게 작성 잘하시는 듯..👍👍👍</p>
 </li>
 </ol>

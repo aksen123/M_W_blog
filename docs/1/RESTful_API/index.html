@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.0.1">
 <title data-rh="true">RESTful_API | M_W</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://aksen123.github.io/M_W_blog/img/ms2.jpg"><meta data-rh="true" name="twitter:image" content="https://aksen123.github.io/M_W_blog/img/ms2.jpg"><meta data-rh="true" property="og:url" content="https://aksen123.github.io/M_W_blog/docs/1/RESTful_API"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="M_W, blog"><meta data-rh="true" name="og:title" content="내가만듦"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="RESTful_API | M_W"><meta data-rh="true" name="description" content="2023년 12월 29일"><meta data-rh="true" property="og:description" content="2023년 12월 29일"><link data-rh="true" rel="icon" href="/M_W_blog/img/favicon.png"><link data-rh="true" rel="canonical" href="https://aksen123.github.io/M_W_blog/docs/1/RESTful_API"><link data-rh="true" rel="alternate" href="https://aksen123.github.io/M_W_blog/docs/1/RESTful_API" hreflang="en"><link data-rh="true" rel="alternate" href="https://aksen123.github.io/M_W_blog/docs/1/RESTful_API" hreflang="x-default"><link rel="stylesheet" href="/M_W_blog/assets/css/styles.6ec1915e.css">
-<script src="/M_W_blog/assets/js/runtime~main.1513b3eb.js" defer="defer"></script>
+<script src="/M_W_blog/assets/js/runtime~main.f525f5a6.js" defer="defer"></script>
 <script src="/M_W_blog/assets/js/main.c854c2e8.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -51,8 +51,7 @@ Client는 <code>URI</code>를 이용해 자원의 지정하고 해당 자원의 
 <br>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="api">API<a href="#api" class="hash-link" aria-label="Direct link to API" title="Direct link to API">​</a></h2>
 <blockquote>
-<p>API(application programming interface 애플리케이션 프로그래밍 인터페이스, 응용 프로그램 프로그래밍 인터페이스)는 컴퓨터나 컴퓨터 프로그램 사이의 연결이다. 일종의 소프트웨어 인터페이스이며 다른 종류의 소프트웨어에 서비스를 제공한다. 이러한 연결이나 인터페이스를 빌드하거나 사용하는 방법을 기술하는 문서나 표준은 API 규격(사양)으로 부른다. 이 표준을 충족하는 컴퓨터 시스템은 API가 구현(implement)되었다거나 노출(expose)되었다고 말한다. API라는 용어는 사양이나 구현체를 의미할 수 있다. <br>
-<strong><a href="https://ko.wikipedia.org/wiki/API" target="_blank" rel="noopener noreferrer">위키백과</a></strong></p>
+<p>API(application programming interface 애플리케이션 프로그래밍 인터페이스, 응용 프로그램 프로그래밍 인터페이스)는 컴퓨터나 컴퓨터 프로그램 사이의 연결이다. 일종의 소프트웨어 인터페이스이며 다른 종류의 소프트웨어에 서비스를 제공한다. 이러한 연결이나 인터페이스를 빌드하거나 사용하는 방법을 기술하는 문서나 표준은 API 규격(사양)으로 부른다. 이 표준을 충족하는 컴퓨터 시스템은 API가 구현(implement)되었다거나 노출(expose)되었다고 말한다. API라는 용어는 사양이나 구현체를 의미할 수 있다. <br> &gt; <strong><a href="https://ko.wikipedia.org/wiki/API" target="_blank" rel="noopener noreferrer">위키백과</a></strong></p>
 </blockquote>
 <p>이런 의미라고 하는데 잘 이해가 안됐다 그래서 여기저기 찾아 보면서 이해한건 clint와 server사이에서 요청과 응답을 대신 해주는 친구라고 일단은.. 이해 했다. 그러니까~ client 에서 server에 데이터를 요청할때 A라는 방식으로 요청하면 A에 대한 데이터를 응답 받을수 있고 B방식으로 요청하면 B에 대한 응답을 수 있게 설계 해둔것이 API라는 것! <del>API에 관해선 따로 글을 작성해 보자✏️</del></p>
 <p><img loading="lazy" src="https://velog.velcdn.com/images/zxzz45/post/d342d971-2d48-45c9-822d-db3d46e106cd/image.jfif" alt="API" class="img_ev3q"></p>
@@ -62,15 +61,20 @@ Client는 <code>URI</code>를 이용해 자원의 지정하고 해당 자원의 
 <br>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="rest-api의-장점">REST API의 장점<a href="#rest-api의-장점" class="hash-link" aria-label="Direct link to REST API의 장점" title="Direct link to REST API의 장점">​</a></h3>
 <ol>
-<li>URL만 보고 어떤 자원에 접근할 것인지, 메소드를 보고 어떤 행위를 할지 알 수 있기 때문에 개발할 때 용이함</li>
-<li>1개의 URI로 4개의 행위(CRUD)를 명시할 수 있기 때문에 효율적이다.</li>
-<li>Stateless한 상태를 유지할 수 있다.</li>
-</ol>
+<li>
+<p>URL만 보고 어떤 자원에 접근할 것인지, 메소드를 보고 어떤 행위를 할지 알 수 있기 때문에 개발할 때 용이함</p>
+</li>
+<li>
+<p>1개의 URI로 4개의 행위(CRUD)를 명시할 수 있기 때문에 효율적이다.</p>
+</li>
+<li>
+<p>Stateless한 상태를 유지할 수 있다.</p>
 <ul>
-<li></li>
 <li>작업을 위한 상태정보를 따로 저장하고 관리하지 않아 세션,쿠키 정보를 별로 저장,관리 하지 않기 때문에 API서버는 들어오는 요청만 단순히 처리 하면 됨.</li>
 <li>서버에서 불필요한 정보를 관리하지 않음으로 구현이 단순해짐</li>
 </ul>
+</li>
+</ol>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="rest-api-설계-규칙">REST API 설계 규칙<a href="#rest-api-설계-규칙" class="hash-link" aria-label="Direct link to REST API 설계 규칙" title="Direct link to REST API 설계 규칙">​</a></h3>
 <br>
 <p><strong>설계 예시!</strong>
@@ -112,8 +116,8 @@ Client는 <code>URI</code>를 이용해 자원의 지정하고 해당 자원의 
 </li>
 <li>경로 부분 중 변하는 부분은 유일한 값으로 대체한다.(즉, <!-- -->:id<!-- -->는 하나의 특정 resource를 나타내는 고유값이다.)<!-- -->
 <blockquote>
-<p>user를 생성 &gt;&gt;&gt;  <code>POST) /users</code> <br>
-id가 1인 user를 삭제 &gt;&gt;  <code>DELETE) /users/1</code></p>
+<p>user를 생성 &gt;&gt;&gt; <code>POST) /users</code> <br>
+id가 1인 user를 삭제 &gt;&gt; <code>DELETE) /users/1</code></p>
 </blockquote>
 </li>
 </ul>
@@ -121,7 +125,7 @@ id가 1인 user를 삭제 &gt;&gt;  <code>DELETE) /users/1</code></p>
 </ol>
 <br>
 <ol start="3">
-<li><strong>슬래시 구분자(/)는 계층 관계를 나타내는데 사용</strong></li>
+<li><strong>슬래시 구분자(/)는 계층 관계를 나타 내는데 사용</strong></li>
 </ol>
 <ul>
 <li>URI 마지막 문자로 슬래시(/)를 포함하지 않는다<!-- -->
