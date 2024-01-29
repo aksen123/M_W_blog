@@ -27,9 +27,9 @@ Lottie는 Airbnb가 만든 오픈소스 라이브러리로, JSON 기반의 애�
 
 [LottieFiles](https://lottiefiles.com/kr/) 요기에 가서~ 간단히 가입해주고 !
 
-![Alt text](lottie1.jpg)
+![Alt text](./img/lottie1.jpg)
 <br /><br />
-![Alt text](image.png)
+![Alt text](./img/image.png)
 
 저기 검색창에 검색후! 맘에드는 애니메이션의 json파일을 저장해주면 된다! (일단 나는 가난한 취준생이기 때문에 free한 애들로만 다운받았음.)
 
@@ -46,7 +46,7 @@ import loading from "@/../public/loading.json";  << 아까 다운받은 애니�
 
 > 아 여기서 json파일 경로가 왜 저모양이냐면 나는 파일을 public에 넣어놔서 `/public/loading.json` 이렇게 하면 경로를 읽을줄 알았는데 못읽어 와서 `../../../public/loading.json`으로 하니까 읽어 왔다 근데 보다시피 좀.. 그런 느낌이라 알아보다가 친구(선생님)한테 물어 봤더니 뙇 보더니 저렇게 하면 된다네 ..? 선생님 설명은
 >
-> ![Alt text](image-1.png) <br />
+> ![Alt text](./img/image-1.png) <br />
 > 폴더구조가 이렇게 돼 있는데 여기서 @가 src를 가르키고 있다고 했다 그러니 public으로 가려면 저렇게 작성을 해줘야 한다~ 이말임! 기억해 두기!
 
 <br /><br />

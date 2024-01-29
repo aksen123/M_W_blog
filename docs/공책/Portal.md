@@ -27,7 +27,7 @@ React Portal은 컴포넌트를 현재 트리구조에서 독립적으로 렌더
 
 ### 모달을 띄우고싶은 곳에 `root`를 만들어 준다.
 
-![Alt text](portal1.jpg)
+![Alt text](./img/portal1.jpg)
 
 ### `root`에 넣을 모달을 만들어준다!
 
@@ -73,12 +73,12 @@ export default Modal;
 
 ### 모달 띄우기
 
-![Alt text](portal2.jpg)
+![Alt text](./img/portal2.jpg)
 
 #### 위 사진처럼 `body > main > section`에서 `section`에 모달 컴포넌트를 띄워도 실제로 모달이 뜨면!
 
-![Alt text](portal3.jpg)
-![Alt text](portal4.jpg)
+![Alt text](./img/portal3.jpg)
+![Alt text](./img/portal4.jpg)
 
 #### 이렇게 `section`에 뜨는게 아니라 `main`에 모달이 띄워지는걸 볼 수 있따!
 
