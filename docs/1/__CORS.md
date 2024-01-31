@@ -16,4 +16,24 @@ CORS는 교차 출처 리소스 공유(Cross-Origin Resource Sharing)로 추가 
 ![url 요소](https://images.velog.io/images/tkclzl97/post/12b1355e-fd8e-4864-a647-3e4278562e0c/image.png)
 <br /><br />
 
-### CORS가 필요한 이유
+### 동일 출처 예시
+
+> Protocol, Host, Port(생략)이 같으며, Path부터 다르므로 동일 출처
+>
+> > http://example.com/app1/index.html <br /> http://example.com/app2/index.html
+
+### 다른 출처 예시
+
+> Protocol이 다름
+>
+> > http://example.com/app1 <br /> https://example.com/app2
+
+> Host가 다름
+>
+> > http://example.com <br /> http://www.example.com <br /> http://myapp.example.com
+
+> 80, 8080으로 포트가 다름
+>
+> > http://example.com <br /> http://example.com:8080
+
+### CORS정책이 필요한 이유
