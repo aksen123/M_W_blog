@@ -48,3 +48,12 @@ CORS는 교차 출처 리소스 공유(Cross-Origin Resource Sharing)로 추가 
 - **스크립트 실행 제한** : SOP는 `<script>`태그를 통한 스크립트 실행에도 적용된다. 따라서 스크립트 파일을 다른 출처에서 가져오면 실행되지 않는다
 - **XMLHttpRequest와 Fetch API 제약** : XMLHttpRequest나 Fetch API를 사용하여 다른 출처의 리소스를 요청할 때, 브라우저는 `CORS(Cross-Origin Resource Sharing)` 규약을 따라야 함
 - **쿠키제한** : 쿠키의 전송을 제한한다. 스크립트에서 다른 출처의 서버로 HTTP요청을 보낼 때, 브라우저는 쿠키를 함께 전송하지 않는다
+
+## CORS HTTP헤더
+
+- Origin: 브라우저가 현재 요청을 보내는 출처를 나타낸다.
+- Access-Control-Allow-Origin: 서버에서 허용하는 출처를 지정한다. 이 헤더를 통해 특정 출처에서의 요청을 허용할 수 있다.
+- Access-Control-Allow-Methods: 서버에서 허용하는 HTTP 메서드를 지정한다. 예를 들어, GET, POST 등.
+- Access-Control-Allow-Headers: 서버에서 허용하는 HTTP 헤더를 지정한다.
+- Access-Control-Allow-Credentials: 브라우저가 쿠키와 같은 인증 정보를 요청에 포함할 수 있는지 여부를 나타냄.
+- Access-Control-Expose-Headers: 브라우저가 접근할 수 있는 헤더를 나타냄.
