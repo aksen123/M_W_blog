@@ -79,6 +79,10 @@ CORS없이 모든 곳에서 데이터를 요청할 수 있게 된다면!! 악의
 
     <br /><br />
 
+### Preflight Request인 경우
+
+    <br /><br />
+
 ## CORS HTTP헤더
 
 - Origin: 브라우저가 현재 요청을 보내는 출처를 나타낸다.
