@@ -81,7 +81,8 @@ CORS없이 모든 곳에서 데이터를 요청할 수 있게 된다면!! 악의
 
 ### Preflight Request인 경우
 
-    <br /><br />
+수정하기~~
+<br /><br />
 
 ## CORS HTTP헤더
 
