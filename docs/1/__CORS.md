@@ -79,9 +79,22 @@ CORS없이 모든 곳에서 데이터를 요청할 수 있게 된다면!! 악의
 
     <br /><br />
 
-### Preflight Request인 경우
+### Preflight Request(예비 요청)인 경우
 
-수정하기~~
+> 요청을 보낼때 먼저 예비 요청을 보내 서버와 통신이 되는지 확인후 본요청을 보내는 방식이다. 예비 요청의 HTTP메소드는 GET,POST가 아닌 OPTIONS라는 요청이 사용된다는 특징이 있다.
+
+- 본요청을 보내기전 HTTP OPTION 메소드로 예비 요청을 먼저 보낸다.
+  1. Origin 헤더에 자신의 출처를 넣는다.
+  2. Access-Control-Request-Method 헤더에 실제 요청에 사용할 메소드를 설정
+  3. Access-Control-Request-Headers 헤더에 실제 요청에 사용할 헤더들을 설정
+- 서버는 예비요청에 대한 응답으로 허용할것과 금지할 것에 대한 헤더 정보를 담아서 브라우저로 보내준다.
+  1. Access-Control-Allow-Origin 헤더에 허용되는 Origin들의 목록을 설정
+  2. Access-Control-Allow-Methods 헤더에 허용되는 메소드들의 목록을 설정
+  3. Access-Control-Allow-Headers 헤더에 허용되는 헤더들의 목록을 설정
+  4. Access-Control-Max-Age 헤더에 해당 예비 요청이 브라우저에 개시 될 수 있는 시간을 초 단위로 설정
+- 이후 브라우저는 보낸 요청과 서버가 응답해준 정책을 비교하고, 해당 요청이 안전한지 확인 후 본요청을 보낸다.
+- 서버가 본요청에 대한 응답을 하면 최종적으로 응답데이터를 자바스크립트로 넘겨준다
+
 <br /><br />
 
 ## CORS HTTP헤더
