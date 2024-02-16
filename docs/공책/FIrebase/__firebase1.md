@@ -33,6 +33,11 @@ tags: [firebase, firestore, storage, 파이어베이스]
 > 아래 사진은 프로젝트에서 사용중인 데이터 베이스인다 일단! foods엔 메뉴들, orders엔 주문 내역들, payment에는 결제 내역들을 저장하고 있음! (결제는 못함ㅎ..ㅎ)
 > ![alt text](image-5.png)
 
-## 만들어둔 프로젝트에 내 앱을 등록하자!
+## 데이터베이스 연결, 초기화!
 
-![alt text](image-6.png)
+- 요기에 들어와서~
+
+  ![alt text](image-6.png)
+
+- 아래롤 내려오면 내 앱이라는게 있는데 여기에서 내가 지금 만들고있는 프로젝트를 연결해주면 된다 ! 나는 웹앱이니까 세번째 메뉴를 클릭!
+  ![alt text](image-7.png)
