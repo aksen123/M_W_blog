@@ -1,12 +1,12 @@
 ---
-title: Firebase 사용하기
-metaTitle: Firebase 사용하기
-description: 2024/2/15
+title: Firebase 시작하기
+metaTitle: Firebase 시작하기
+description: 2024/2/17
 tags: [firebase, firestore, storage, 파이어베이스]
 ---
 
 :::tip 🫡
-지금 진행중인 만두 키오스크, 관리자 페이지에서 사용중인 Firestore database, storage 에 관련해서 글 작성할것임 뭔가 사진으로 보면 더 이해하기 쉬워했던 나를 위해 .. 사진위주로 작성해보겠다! 일단!! 하루만에 다쓸 욕심은 버리고.. 천천히... 천천히 완성해 나가자.. ✌️
+지금 진행중인 만두 키오스크, 관리자 페이지에서 사용중인 Firestore database, storage 에 관련해서 작성할꺼다 먼저 설치, 데이터베이스 만들고 연결하는것 까지만 작성해야지!
 :::
 
 ## 먼저 데이터 베이스를 만들자~
@@ -41,3 +41,31 @@ tags: [firebase, firestore, storage, 파이어베이스]
 
 - 아래롤 내려오면 내 앱이라는게 있는데 여기에서 내가 지금 만들고있는 프로젝트를 연결해주면 된다 ! 나는 웹앱이니까 세번째 메뉴를 클릭!
   ![alt text](image-7.png)
+
+- 위의 메뉴를 누르면 앱을 등록하는 화면이 나오는데 닉네임 정해주고 SDK를 등록해줘야하는데! 나같은 경우엔 아래 코드를 복사해서 firebase.ts폴더에 셋팅을 해줬음! (앱정보는 환경변수로 저장해서 넣었다!)
+  ![alt text](img/firebase.jpg)
+
+- 설치하기! (SDK를 추가하기전에 먼저 설치 해줘야함)
+
+```js
+npm install firebase --save
+```
+
+```ts title='firebase.ts'
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+export default db;
+```
