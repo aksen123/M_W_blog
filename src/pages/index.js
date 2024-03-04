@@ -2,10 +2,11 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import "./index.module.css";
 import mainImage from "@site/static/img/ms2.jpg";
-
+import dayjs from "dayjs";
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-
+  const date = dayjs();
+  console.log(date.startOf("month"));
   return (
     <Layout>
       <main>
