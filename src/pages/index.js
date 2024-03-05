@@ -5,8 +5,8 @@ import mainImage from "@site/static/img/ms2.jpg";
 import dayjs from "dayjs";
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-  const date = dayjs();
-  console.log(date.startOf("month"));
+  const date = dayjs("2024.02");
+  console.log(date.format("YYYY-MM-DD"), date.day());
   return (
     <Layout>
       <main>
