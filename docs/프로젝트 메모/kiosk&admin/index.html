@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.0.1">
 <title data-rh="true">kiosk, admin 변경 사항 | M_W</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://aksen123.github.io/M_W_blog/img/ms2.jpg"><meta data-rh="true" name="twitter:image" content="https://aksen123.github.io/M_W_blog/img/ms2.jpg"><meta data-rh="true" property="og:url" content="https://aksen123.github.io/M_W_blog/docs/프로젝트 메모/kiosk&amp;admin"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="M_W, blog"><meta data-rh="true" name="og:title" content="내가만듦"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="kiosk, admin 변경 사항 | M_W"><meta data-rh="true" name="description" content="2024 03 17"><meta data-rh="true" property="og:description" content="2024 03 17"><link data-rh="true" rel="icon" href="/M_W_blog/img/favicon.png"><link data-rh="true" rel="canonical" href="https://aksen123.github.io/M_W_blog/docs/프로젝트 메모/kiosk&amp;admin"><link data-rh="true" rel="alternate" href="https://aksen123.github.io/M_W_blog/docs/프로젝트 메모/kiosk&amp;admin" hreflang="en"><link data-rh="true" rel="alternate" href="https://aksen123.github.io/M_W_blog/docs/프로젝트 메모/kiosk&amp;admin" hreflang="x-default"><link rel="stylesheet" href="/M_W_blog/assets/css/styles.6ec1915e.css">
-<script src="/M_W_blog/assets/js/runtime~main.e56b4685.js" defer="defer"></script>
+<script src="/M_W_blog/assets/js/runtime~main.a5dd748a.js" defer="defer"></script>
 <script src="/M_W_blog/assets/js/main.1b490997.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -47,18 +47,37 @@
 <p>일단 이렇게 두가지 방식을 고민하면서 지금 글을 작성 하고있었는데 작성하다보니 두번째 방식이 더 나을꺼 같다는 생각이 든다 그래서 두번째 방식으로 할 생각이다 ㅎㅎ.. 그냥 한군데에 다 묶어 두는게 좋지 않을까..?? 아니면 뭐 ..다시 수정해야지 뭐 ..</p>
 <br>
 <br>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="그럼-뭘-해야하나">그럼 뭘 해야하나~~~<a href="#그럼-뭘-해야하나" class="hash-link" aria-label="Direct link to 그럼 뭘 해야하나~~~" title="Direct link to 그럼 뭘 해야하나~~~">​</a></h2>
-<p>작업 하기전에 해야할 것들을 정리 해둬야 겠따!!</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="240404-수정사항">24.04.04 수정사항<a href="#240404-수정사항" class="hash-link" aria-label="Direct link to 24.04.04 수정사항" title="Direct link to 24.04.04 수정사항">​</a></h3>
+<p>위에 두가지 방식다 해도 상관은 없는데 위 방식으로 데이터를 불러오려면 stores에 지점명에 payments 이런식으로 타고 타고 들어가야하고 특히 전지점 매출 조회할때는 지점마다 다 조회를 해야 하기때문에 약간.. 비효율 적이랄까.. 그래서 구조를 다시 수정했다!</p>
+<br>
+<p>기존에 사용했던 구조를 다시 사용하는데 지점마다 유니크한 값을 지정해준다 예를들어 서울지점에 1이라는 유니크 값을 주고, menu라는 컬렉션 안에 <code>1_[메뉴의 유니크값]</code> 이런식의 이름의 문서로 메뉴를 넣어주는 것이다 각각의 컬렉션안에 지점들의 메뉴,결제내역들을 넣어서 조회할때 지점코드,메뉴코드로 조회 할 수 있게 수정 했다!</p>
+<br>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="추가-사항해야함">추가 사항(해야함)<a href="#추가-사항해야함" class="hash-link" aria-label="Direct link to 추가 사항(해야함)" title="Direct link to 추가 사항(해야함)">​</a></h3>
 <ol>
-<li>kiosk - 시작 페이지에 지점명 입력후 지점 메뉴 출력해주기<!-- -->
+<li>지점을 추가 할때 미리 만들어둔 <code>default menu</code>를 바로 넣을수 있게 db에 추가했고(admin페이지에서 추가,수정,삭제 가능) 삭제 같은경우헨 <code>default menu</code>에서 특정 메뉴를 삭제하면 전 지점에 있는 메뉴들도 같이 삭제 되게 수정 했다(프렌차이즈를 생각하면 됨) ⬅️ 이런 이유들 때문에 지점,메뉴 코드로 다 조회하게끔 구조를 다시 변경했다!</li>
+<li>admin페이지 로그인 기능 넣기 (아이디별 권한 설정해주기)<!-- -->
 <ul>
-<li>기존 주문 방식 변경해주기 (주문시 결제하기)</li>
+<li>전체 관리 권한</li>
+<li>지점 관리 권한</li>
+<li>db에 비밀번호 저장시 암호화 하기 (sha256)</li>
 </ul>
 </li>
-<li>admin - 메인페이지 에선 테이블 주문 내역이 아닌 지점들의 당일 현황이 보여져야함.</li>
-<li>admin - 지점 클릭시 지점 상세 관리 페이지(메뉴,매출등) 볼수있게 만들기!</li>
-<li>admin - 지점 추가 기능 넣어주기 (지점 이름, 번호, 주소등)</li>
-<li>admin - 사이드바 메뉴 수정하기(매출달력)</li>
+<li>지점 추가 기능 넣기</li>
+<li>지점별 매출달력,메뉴관리 사이드바로 빼주기</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="그럼-뭘-해야하나">그럼 뭘 해야하나<a href="#그럼-뭘-해야하나" class="hash-link" aria-label="Direct link to 그럼 뭘 해야하나" title="Direct link to 그럼 뭘 해야하나">​</a></h2>
+<p>작업 하기전에 해야할 것들을 정리 해둬야 겠따!!</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="240404-작업끝난건-삭제-했음">24.04.04 작업끝난건 삭제 했음!<a href="#240404-작업끝난건-삭제-했음" class="hash-link" aria-label="Direct link to 24.04.04 작업끝난건 삭제 했음!" title="Direct link to 24.04.04 작업끝난건 삭제 했음!">​</a></h3>
+<ol>
+<li><del>kiosk - 시작 페이지에 지점명 입력후 지점 메뉴 출력해주기</del>
+<ul>
+<li><del>기존 주문 방식 변경해주기 (주문시 결제하기)</del></li>
+</ul>
+</li>
+<li><del>admin - 메인페이지 에선 테이블 주문 내역이 아닌 지점들의 당일 현황이 보여져야함.</del></li>
+<li><del>admin - 지점 클릭시 지점 상세 관리 페이지(메뉴,매출등) 볼수있게 만들기!</del></li>
+<li><del>admin - 지점 추가 기능 넣어주기 (지점 이름, 번호, 주소등)</del></li>
+<li><del>admin - 사이드바 메뉴 수정하기(매출달력)</del></li>
 <li>admin - 위에꺼 다 하면 로그인 만들어주기 (할수있으면..만들고싶은..?)<!-- -->
 <ul>
 <li>master는 모든 지점 매출확인 가능, 메뉴 추가/수정/삭제, 지점추가 등 다 가능하게</li>
@@ -66,6 +85,6 @@
 </ul>
 </li>
 </ol>
-<p>일단 이런식으로 변경 추가 할거임! 그럼 만들러 가봐야겠다!👨‍💻</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/M_W_blog/docs/docusaurus/2"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">docusaurus 사용하기 - github pages배포</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#기존-방식과-파이어스토어-구조" class="table-of-contents__link toc-highlight">기존 방식과 파이어스토어 구조</a><ul><li><a href="#기존-파이어베이스" class="table-of-contents__link toc-highlight">기존 파이어베이스</a></li></ul></li><li><a href="#변경-하려는-방식" class="table-of-contents__link toc-highlight">변경 하려는 방식</a></li><li><a href="#그럼-뭘-해야하나" class="table-of-contents__link toc-highlight">그럼 뭘 해야하나~~~</a></li></ul></div></div></div></div></main></div></div></div></div>
+<p>일단 이런식으로 변경 추가 할거임! 그럼 만들러 가봐야겠다!👨‍💻</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/M_W_blog/docs/docusaurus/2"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">docusaurus 사용하기 - github pages배포</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#기존-방식과-파이어스토어-구조" class="table-of-contents__link toc-highlight">기존 방식과 파이어스토어 구조</a><ul><li><a href="#기존-파이어베이스" class="table-of-contents__link toc-highlight">기존 파이어베이스</a></li></ul></li><li><a href="#변경-하려는-방식" class="table-of-contents__link toc-highlight">변경 하려는 방식</a><ul><li><a href="#240404-수정사항" class="table-of-contents__link toc-highlight">24.04.04 수정사항</a></li><li><a href="#추가-사항해야함" class="table-of-contents__link toc-highlight">추가 사항(해야함)</a></li></ul></li><li><a href="#그럼-뭘-해야하나" class="table-of-contents__link toc-highlight">그럼 뭘 해야하나</a><ul><li><a href="#240404-작업끝난건-삭제-했음" class="table-of-contents__link toc-highlight">24.04.04 작업끝난건 삭제 했음!</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>
