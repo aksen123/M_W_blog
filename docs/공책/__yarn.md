@@ -16,3 +16,20 @@ yarn berry 로 next js + typescript 프로젝트 생성, 라이브러리 추가 
 ```
  npm install -g yarn
 ```
+
+## 버전 확인
+
+```
+yarn -v
+yarn --version
+```
+
+![alt text](./img/yarnImg.png)
+
+## yarn 업데이트
+
+```
+
+```
+
+## 프로젝트 만들기!
