@@ -28,11 +28,12 @@ declare global {
 
 ## layout에 넣어줄 GlobalComponent를 생성해준다
 
-> 나는 아래 사진처럼 layout 컴포넌트 GlobalComponent를 넣어 줬다. <br />
-> 이렇게 해주면 맨처음 로드될 때 컴포넌트 안에서 useEffect 훅이 실행되도록 하고 이렇게 하면 window.alert함수를 재정의하고, 모달을 위한 DOM 노드(root)를 생성하는 작업을 앱이 시작될 때 수행 할 수 있기 때문이다!
+> 나는 아래 사진처럼 layout 컴포넌트에 GlobalComponent를 넣어 줬다. <br />
+> 맨처음 페이지가 로드될 때 GlobalComponent의 useEffect 안에서 window.alert함수를 재정의하고, 모달을 위한 DOM 노드(root)를 생성하는 작업을 앱이 시작될 때 수행 할 수 있기 때문이다!
 
-| ![alt text](./img/alert.png) | ![alt text](./img/alert1.png) |
+| layout.tsx                   | GlobalComponent.tsx           |
 | ---------------------------- | ----------------------------- |
+| ![alt text](./img/alert.png) | ![alt text](./img/alert1.png) |
 
 #### 의존성 배열은 빈배열로 두고 처음 마운트 될때만 실행되게 해줬다
 
@@ -113,4 +114,4 @@ if (getUser.empty) {
 
 alert창의 확인을 누르면 이렇게 콜백으로 넣어준 함수까지 다 되는걸 확인 할 수 있다!✌️
 
-> 이렇게 alert 함수를 재정의해서 내가 커스텀한 alert창을 띄우는 것에 대해 작성해봤따! 전부터 alert은 어떻게 바꿀수 없나 .. 생각하던 차에 친구가(선생님께서)이렇게도 할 수 있다는 걸 알려줘서 해봤는데 매우 만족스럽고 .....좋구만 이렇게 해서 kiosk,admin에서 사용하고있는데 아주 유용하게 잘 쓰고있다 너무 졸린상태에서 작성한거라 엉망인거같은데 일단ㅇ..여기까지 하고 다시 수정 하던가 해봐야지... 🖐️
+> 이렇게 alert 함수를 재정의해서 내가 커스텀한 alert창을 띄우는 것에 대해 작성해봤따! 전부터 alert은 어떻게 바꿀수 없나 .. 생각하던 차에 친구가(선생님께서)이렇게도 할 수 있다는 걸 알려줘서 해봤는데 매우 만족스럽고 .....좋구만 이렇게 해서 kiosk,admin에서 사용하고있는데 아주 유용하게 잘 쓰고있다!!
