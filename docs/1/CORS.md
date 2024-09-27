@@ -6,7 +6,7 @@ tags: [CORS, 교차 출처 리소스 공유]
 
 ## CORS(Cross-Origin Resource Sharing)란 ?
 
-브라우저에서는 보안적 이유로 `Cross-Origin(교차출처)` HTTP요청을 제한 한다 그래서 `Cross-Origin` 요청으르 하려면 서버의 동의가 필요한데, 만약 서버의 동의,비동의에 따라 브라우저에선 요청을 허락,거절 한다.
+브라우저에서는 보안적 이유로 `Cross-Origin(교차출처)` HTTP요청을 제한 한다 그래서 `Cross-Origin` 요청을 하려면 서버의 동의가 필요한데, 만약 서버의 동의,비동의에 따라 브라우저에선 요청을 허락,거절 한다.
 
 이러한 메커니즘을 `교차 출처 리소스 공유(Cross-Origin Resource Sharing,CORS)`라고 하는데 HTTP-header를 사용하여 가능하다
 
@@ -36,7 +36,7 @@ tags: [CORS, 교차 출처 리소스 공유]
 
 > 80, 8080으로 포트가 다름
 >
-> > http://example.com <br /> http://example.com:8080
+> > http://example.com:80 <br /> http://example.com:8080
 
 <br /><br />
 
@@ -67,18 +67,15 @@ CORS없이 모든 곳에서 데이터를 요청할 수 있게 된다면!! 악의
 
 1. 클라이언트에서 HTTP요청의 헤더에 Origin을 담아 전달한다.
 
-
-    - 기본적으로 웹은 HTTP프로토콜을 이용해 서버에 요청을 보내게 되는데, 이때 브라우저는 요청 헤더에 Origin이라는 필드에 출처를 함께 담아 보내게 된다.
+   - 기본적으로 웹은 HTTP프로토콜을 이용해 서버에 요청을 보내게 되는데, 이때 브라우저는 요청 헤더에 Origin이라는 필드에 출처를 함께 담아 보내게 된다.
 
 2. 서버는 응답헤더에 Access-Control-Allow-Origin을 담아 클라이언트로 전달한다.
 
-
-    - 이후 서버가 이요청에 대한 응답을 할 때 응답헤더에 Access-Control-Allow-Origin 이라는 필드를 추가하고 이 리소스를 접근하는 것이 허용된 출처 url을 내려보낸다.
+   - 이후 서버가 이요청에 대한 응답을 할 때 응답헤더에 Access-Control-Allow-Origin 이라는 필드를 추가하고 이 리소스를 접근하는 것이 허용된 출처 url을 내려보낸다.
 
 3. 클라이언트에서 Origin과 서버가 보내준 Access-Control-Allow-Origin을 비교한다
 
-
-    - 이후 응답을 받은 브라우저는 자신이 보냈떤 요청의 Origin과 서버가 보내준 응답의 Access-Control-Allow-Origin을 비교해본 후 차단할지 말지를 결정한다.(만약 유효하지 않다면 그 응답을 사용하지않고 버린다. - CORS에러)
+   - 이후 응답을 받은 브라우저는 자신이 보냈떤 요청의 Origin과 서버가 보내준 응답의 Access-Control-Allow-Origin을 비교해본 후 차단할지 말지를 결정한다.(만약 유효하지 않다면 그 응답을 사용하지않고 버린다. - CORS에러)
 
 ### Simple Request인경우!
 
