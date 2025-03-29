@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkm_wblog=self.webpackChunkm_wblog||[]).push([[6194],{6622:s=>{s.exports=JSON.parse('{"label":"DB","permalink":"/M_W_blog/docs/tags/db","allTagsPath":"/M_W_blog/docs/tags","count":1,"items":[{"id":"1/ORM","title":"ORM","description":"2024\ub144 2\uc6d4 5\uc77c","permalink":"/M_W_blog/docs/1/ORM"}],"unlisted":false}')}}]);
