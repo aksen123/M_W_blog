@@ -42,10 +42,10 @@ const config = {
     ({
       // Replace with your project's social card
       image: "/img/ms2.jpg",
-      description: "test",
+      description: "대충 블로그",
       metadata: [
         { name: "keywords", content: "M_W, blog" },
-        { name: "og:title", content: "내가만듦" },
+        { name: "og:title", content: "아마도 블로그?.." },
         // {
         //   property: "og:image",
         //   content: "/img/ms2.jpg",
