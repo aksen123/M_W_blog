@@ -1,8 +1,8 @@
 ---
-title: docusaurus 사용하기 - 소개 및 사용법
-metaTitle: docusaurus 사용하기
-description:
-tags: [axios, fetch, 통신, XMLHttpRequests]
+title: KCB 휴대폰인증
+metaTitle: KCB
+description: KCB 본인인증
+tags: [KCB, KCB 본인인증, 본인인증]
 ---
 
 # Next.js에서 KCB 휴대폰 본인인증 연동 기록
