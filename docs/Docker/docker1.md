@@ -1,6 +1,6 @@
 ---
-title: Docker 소개
-description: Docker의 개념과 명령어에 대한 정리
+title: 1주차-도커 소개
+description: 도커-쿠버네티스-스터디 1주차
 tags: [docker, container, 도커, 쿠버네티스, 스터티]
 ---
 

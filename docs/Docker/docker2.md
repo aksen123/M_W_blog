@@ -1,6 +1,6 @@
 ---
-title: Docker 네트워크 실습
-description: Docker
+title: 1주차-도커 실습
+description: 도커-쿠버네티스-스터디 1주차
 tags: [docker, container, 도커, 쿠버네티스, 스터티]
 ---
 
@@ -25,7 +25,7 @@ tags: [docker, container, 도커, 쿠버네티스, 스터티]
 
 ### 🔐키 페어 생성
 
-**EC2 > 네트워크 및 보안 > 키 페어 > 키 페어 생성**
+**EC2 > 네트워크 및 보안 > 키 페어 > 키 페어 생성**  
 파일 형식을 .pme으로 설정하고 키페어를 생성하면 파일을 다운받을수 있게 된다.
 
 ![키페어 생성 화면](./img/image.png)
@@ -79,60 +79,169 @@ newgrp docker  # 또는 SSH 재접속
 
 ---
 
-## ✅ Docker 기본 네트워크 모드: bridge
+## 🌐 Docker 네트워크 모드 정복하기
+
+### 📦 네트워크 모드 종류 및 확인
 
 ```bash
-# 컨테이너 2개 실행
+docker network ls
+docker info | grep Network
+```
+
+도커는 다음과 같은 네트워크 모드를 지원한다:
+
+| 모드    | 설명                                          |
+| ------- | --------------------------------------------- |
+| Bridge  | 기본값. `docker0` 브리지 네트워크를 사용      |
+| Host    | 호스트 네트워크를 그대로 사용                 |
+| None    | 네트워크를 아예 비활성화                      |
+| Overlay | 다중 호스트 네트워크 구성을 위한 모드         |
+| Macvlan | 물리적 NIC와 같은 네트워크 구성이 필요한 경우 |
+| IPvlan  | 네트워크 정책 제어에 특화                     |
+
+### 🔌 Bridge 모드 실습
+
+```bash
 docker run -it --name=kn --rm busybox
 ip addr
 
 docker run -it --name=ou --rm busybox
 ip addr
 
-# 서로 ping 테스트
-ping -c 4 172.17.0.x
+# ping 테스트
+ping -c 4 172.17.0.X
 ```
 
-### 🔍 컨테이너 외부 통신 확인
+### 🛰 외부 통신 확인
 
 ```bash
-# 호스트에서 ICMP 감시
 sudo tcpdump -i any icmp
-
-# 컨테이너1에서 외부 ping
 ping -c 1 8.8.8.8
 ```
 
-### ✅ 결과
+---
 
-- 컨테이너의 ping 요청이 docker0 → enX0 → 인터넷으로 전달됨
-- 응답도 다시 역방향으로 전달되어 컨테이너에 도달함
+## 🛠 Host & None 모드 실습
+
+### 🏠 Host 모드
+
+```bash
+docker run --rm -d --network host --name my_nginx nginx
+docker inspect my_nginx
+curl -s localhost | grep -o '<title>.*</title>'
+```
+
+같은 포트를 사용하는 컨테이너는 중복 실행되지 않음!
+
+### 🚫 None 모드
+
+```bash
+docker run --rm -d --network none --name my_nginx nginx
+docker exec -it my_nginx /bin/bash
+ip addr
+```
+
+네트워크 없음. 내부에서 ping이나 curl 불가.
 
 ---
 
-## ✅ Docker 소켓과 권한
+## Docker 컨테이너 보안
 
-### 🔐 docker 그룹 권한 실습
+### 👤 Root vs Non-root 컨테이너
+
+#### ✅ root 유저로 실행
 
 ```bash
-whoami          # ubuntu
-docker info     # 정상 실행 → ubuntu가 docker 그룹에 속해있음
+mkdir ~/non-root && cd ~/non-root
 
-ls -l /var/run/docker.sock
-# srw-rw---- 1 root docker ...
+cat << EOF >> hello.sh
+#!/bin/sh
+echo "Hello from multi-architecture Docker image!"
+EOF
+chmod +x hello.sh
+
+cat << EOF >> root-dockerfile
+FROM ubuntu
+COPY hello.sh /hello.sh
+CMD ["/hello.sh"]
+EOF
+
+# 빌드 및 실행
+docker build -t root -f root-dockerfile .
+docker run -it root /bin/bash
+
+# 컨테이너 내부에서 확인
+whoami
+id
+apt update -y && apt install nginx -y
 ```
 
-> 도커 그룹은 root와 같은 권한 수준을 가지므로 보안상 유의 필요
+#### ✅ non-root 유저로 실행
 
 ```bash
-groups  # docker 그룹 포함 확인
+cat << EOF >> non-root-dockerfile
+FROM ubuntu
+RUN useradd -m -u 1001 appuser
+USER appuser
+COPY hello.sh /home/appuser/hello.sh
+EOF
+
+# 빌드 및 실행
+docker build -t non-root -f non-root-dockerfile .
+docker run -it non-root /bin/bash
+
+# 컨테이너 내부에서 확인
+whoami
+id
+apt update -y
 ```
 
-### 🧪 도커 소켓 감시
+> 보안을 강화하려면 컨테이너를 가능한 non-root 사용자로 실행하는 것이 권장된다.
+
+> root로 실행된 컨테이너는 외부 침투 시 리스크가 큼
+
+---
+
+### 🔐 Docker 클라이언트 인증 (OPA)
+
+Docker 명령어를 아무나 수행할 수 없도록 인증 단계 추가 - OPA
+
+#### OPA Plugin 활성화 실습
 
 ```bash
-lsof /var/run/docker.sock
-ss -xl | grep docker
+docker plugin ls
+
+# 정책 디렉토리 생성
+sudo mkdir -p /etc/docker/policies
+sudo touch /etc/docker/policies/authz.rego
+
+# 모든 사용자에게 모두 허용
+echo "package docker.authz
+allow = true" | sudo tee -a /etc/docker/policies/authz.rego
+
+# Docker Plugin Install - OPA (수락 필요)
+sudo docker plugin install openpolicyagent/opa-docker-authz-v2:0.4 opa-args="-policy-file /opa/policies/authz.rego"
+
+# Docker Daemon 설정
+if [ ! -f /etc/docker/daemon.json ]; then
+  sudo touch /etc/docker/daemon.json
+fi
+echo "{
+  \"authorization-plugins\": [\"openpolicyagent/opa-docker-authz-v2:0.4\"]
+}" | sudo tee -a /etc/docker/daemon.json
+
+# 설정 확인
+cat /etc/docker/daemon.json
+
+# 플러그인 활성화 적용
+sudo systemctl restart docker
+
+# 정책 변경 (모두 사용 불가)
+sudo vim /etc/docker/policies/authz.rego
+# 내용 수정: allow = false
+
+# Docker 명령어 수행 테스트
+docker ps
 ```
 
 ---
