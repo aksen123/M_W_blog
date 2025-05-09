@@ -65,11 +65,11 @@ const config = {
             label: "끄적끄적",
           },
           { to: "/docs/tags", label: "Tags", position: "left" },
-          {
-            href: "https://github.com/aksen123",
-            label: "GitHub",
-            position: "right",
-          },
+          // {
+          //   href: "https://github.com/aksen123",
+          //   label: "GitHub",
+          //   position: "right",
+          // },
         ],
       },
       prism: {
